@@ -13,6 +13,7 @@ import { appRoutes } from './routing';
 import { ForgetPuComponent } from './forget-pu/forget-pu.component';
 import { HomeComponent } from './home/home.component';
 import { ClubLocationComponent } from './home/club-location/club-location.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ClubLocationComponent } from './home/club-location/club-location.compon
     SignUpComponent,
     ForgetPuComponent,
     HomeComponent,
-    ClubLocationComponent
+    ClubLocationComponent,
+    AdminPageComponent
   
   ],
   imports: [
