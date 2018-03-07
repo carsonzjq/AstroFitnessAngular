@@ -4,9 +4,7 @@
         <a class="navbar-brand" routerLink="home">AstroFitness</a>
       </div>
       <ul class="nav navbar-nav">
-        <li class="active"><a routerLink="home">Home</a></li>
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
+        <li><a routerLink="home">Home</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a routerLink="sign-up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -15,51 +13,33 @@
     </div>
 </nav>
     
-      <div style="margin-top:2.5cm;">
-                  
-
+     <div style="margin-top:2.5cm;">
        <div class="container-fluid" >
-             <router-outlet></router-outlet>
+          <router-outlet></router-outlet>
        </div>
-                
      </div>  
-    
-      <div class="container" id="myfooter" style="margin-top:20px;background-color:gray">
-          <footer class="footer-bs" >
-         
-             <div class="row" >
-               <div class="col-md-3">
-                   <h2><img alt="AstroFitness" src="../icon.bmp"></h2>
-                     <p>AstroFitness</p>
-                     
-                 </div>
-               <div class="col-md-3">
-                                     
-                       <ul class="footul">
-                              <li><h4>Site</h4></li> 
-                             <li><a href="#">Home</a></li>
-                             <li><a href="#">Find a Club</a></li>
-                                                     
-                         </ul>
-                    
-                   
-                 </div>
-               <div class="col-md-3 footer-social">
-                   
-                   <ul class="footul" >
-                       <li><h4>Contact Us</h4></li>
-                       <li><a href="#">astrnauts@fitness.com</a></li>
-                       <li><a href="#">234-984-8374</a></li>
-                                  
-                     </ul>
-                 </div>
-                  <div class="col-md-3">
-                    <h4>Log In:</h4>
-                     <p><a routerLink="user-login"><span class="glyphicon glyphicon-log-in"></span> &nbsp;Log In</a>
-                     </p>
-                 </div>
-             </div>
-         
-         </footer>
-         <section style="text-align:center; margin:10px auto;"><p>© 2018, All rights reserved</p></section>
-    </div>
+     <div class="container" id="myfooter" style="margin-top:20px; background-color:#7BD5C6">
+        <footer class="footer-bs" >
+           <div class="row" >
+             <div class="col-md-4">
+                 <h2 style="margin-left:50px">AstroFitness</h2>
+               </div>
+             <div class="col-md-4">              
+                     <ul class="footul">
+                            <li><h4>Site</h4></li> 
+                           <li><a href="#">Home</a></li>
+                           <li><a href="#">Find a Club</a></li>                     
+                       </ul>
+               </div>
+             <div class="col-md-4 footer-social">
+                 <ul class="footul" >
+                     <li><h4>Contact Us</h4></li>
+                     <li><a href="#">astrnauts@fitness.com</a></li>
+                     <li><a href="#">234-984-8374</a></li>        
+                   </ul>
+               </div>
+           </div>
+       </footer>
+       <section style="text-align:center; margin:10px auto;"><p>© 2018, All rights reserved</p></section>
+  </div>
+     
