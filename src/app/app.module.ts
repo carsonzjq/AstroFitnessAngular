@@ -10,9 +10,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { appRoutes } from './routing';
-import { ForgetPuComponent } from './forget-pu/forget-pu.component';
 import { HomeComponent } from './home/home.component';
-import { ClubLocationComponent } from './home/club-location/club-location.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 
 
@@ -22,9 +20,7 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
     AdminLoginComponent,
     UserLoginComponent,
     SignUpComponent,
-    ForgetPuComponent,
     HomeComponent,
-    ClubLocationComponent,
     AdminPageComponent
   
   ],
