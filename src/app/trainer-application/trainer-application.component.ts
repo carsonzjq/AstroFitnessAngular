@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user';
 import { HttpClient } from '@angular/common/http';
+import { User } from '../user';
 
 @Component({
-	selector: 'app-sign-up',
-	templateUrl: './sign-up.component.html',
-	styleUrls: ['./sign-up.component.css']
+	selector: 'app-trainer-application',
+	templateUrl: './trainer-application.component.html',
+	styleUrls: ['./trainer-application.component.css']
 })
-export class SignUpComponent implements OnInit {
+export class TrainerApplicationComponent implements OnInit {
 
 	branches;
 
@@ -50,7 +50,7 @@ export class SignUpComponent implements OnInit {
 			}
 		}
 		
-		this.url = "http://localhost:8085/AstroFitness/rest/client/post/newClient";
+		this.url = "http://localhost:8085/AstroFitness/rest/trainer/post/newTrainer";
 		this.http.post(this.url, this.newUser).subscribe(
 			data => {
 				console.log(data);

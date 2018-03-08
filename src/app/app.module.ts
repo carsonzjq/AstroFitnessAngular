@@ -6,29 +6,37 @@ import {RouterModule} from '@angular/router'
 
 
 import { AppComponent } from './app.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { appRoutes } from './routing';
 import { HomeComponent } from './home/home.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
+import { BranchesComponent } from './branches/branches.component';
+import { TrainerApplicationComponent } from './trainer-application/trainer-application.component';
+import { ClientPageComponent } from './client-page/client-page.component';
+import { TrainerPageComponent } from './trainer-page/trainer-page.component';
+import { ManagerPageComponent } from './manager-page/manager-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminLoginComponent,
     UserLoginComponent,
     SignUpComponent,
     HomeComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    BranchesComponent,
+    TrainerApplicationComponent,
+    ClientPageComponent,
+    TrainerPageComponent,
+    ManagerPageComponent
   
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule,
+    HttpClientModule
 
 
   ],
