@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../user';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-sign-up',
@@ -8,6 +10,29 @@ import { Component, OnInit } from '@angular/core';
 export class SignUpComponent implements OnInit {
 
   ngOnInit() {
+  }
+
+  constructor(private http: HttpClient){
+
+  }
+
+  private url = "http://localhost:8085/AstroFitness/rest/trainer/post/newTrainer";
+
+  newUser = new User();
+
+  check(){
+  	console.log(this.newUser);
+  }
+
+  submit(){
+  	this.http.post(this.url, this.newUser).subscribe(
+  		data => {
+  			console.log(data);
+  		},
+  		error => {
+  			console.log(error);
+  		}
+  		)
   }
 
 }

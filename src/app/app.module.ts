@@ -32,7 +32,7 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
 
 
   ],
