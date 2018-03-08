@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../user';
+import { Trainer } from '../trainer';
 
 @Component({
 	selector: 'app-trainer-application',
@@ -13,7 +13,7 @@ export class TrainerApplicationComponent implements OnInit {
 
 	private url;
 
-	newUser = new User();
+	newUser = new Trainer();
 
 	ngOnInit() {
 		this.fetchGyms();

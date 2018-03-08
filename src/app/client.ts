@@ -1,5 +1,5 @@
 
-export class User {
+export class Client {
 	
 	constructor(
 		public fname?: string,
@@ -7,7 +7,7 @@ export class User {
 		public address?: string,
 		public email?: string,
 		public password?: string,
-		public home_gym?: Gym
+		public client_gym?: Gym
 		) {  }
 
 }

@@ -3,11 +3,11 @@
   <form data-toggle="validator" role="form" method="POST" action="SignupServlet" (ngSubmit)="submit()" #registerForm="ngForm">
     <div class="form-group">
       <label for="firstname" class="control-label" style="color:white">First name</label>
-      <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First name" required [(ngModel)]="newUser.fname" #firstname="ngModel">
+      <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First name" required [(ngModel)]="newUser.firstname" #fname="ngModel">
     </div>
     <div class="form-group">
       <label for="lastname" class="control-label" style="color:white">Last name</label>
-      <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last name" required [(ngModel)]="newUser.lname" #lastname="ngModel">
+      <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last name" required [(ngModel)]="newUser.lastname" #lname="ngModel">
     </div>
     <div class="form-group">
       <label for="address" class="control-label" style="color:white">Address</label>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user';
+import { Client } from '../client';
 import { HttpClient } from '@angular/common/http';
+import { User } from '../user';
 
 @Component({
 	selector: 'app-sign-up',
@@ -13,7 +14,7 @@ export class SignUpComponent implements OnInit {
 
 	private url;
 
-	newUser = new User();
+	newUser = new Client();
 
 	ngOnInit() {
 		this.fetchGyms();
@@ -44,8 +45,8 @@ export class SignUpComponent implements OnInit {
 	submit(){
 		console.log(this.newUser);
 		for(var x in this.branches){
-			if(this.branches[x].id == this.newUser.home_gym){
-				this.newUser.home_gym = this.branches[x];
+			if(this.branches[x].id == this.newUser.client_gym){
+				this.newUser.client_gym = this.branches[x];
 				break;
 			}
 		}
