@@ -16,7 +16,7 @@ export class SignUpComponent implements OnInit {
 
   }
 
-  private url = "http://localhost:8085/AstroFitness/rest/trainer/post/newTrainer";
+  private url = "http://localhost:8090/AstroFitness/rest/trainer/post/newTrainer";
 
   newUser = new User();
 
