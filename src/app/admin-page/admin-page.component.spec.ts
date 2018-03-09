@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ForgetPuComponent } from './forget-pu.component';
+import { AdminPageComponent } from './admin-page.component';
 
-describe('ForgetPuComponent', () => {
-  let component: ForgetPuComponent;
-  let fixture: ComponentFixture<ForgetPuComponent>;
+describe('AdminPageComponent', () => {
+  let component: AdminPageComponent;
+  let fixture: ComponentFixture<AdminPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ForgetPuComponent ]
+      declarations: [ AdminPageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ForgetPuComponent);
+    fixture = TestBed.createComponent(AdminPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

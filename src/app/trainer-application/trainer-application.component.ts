@@ -1,30 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { Client } from '../client';
 import { HttpClient } from '@angular/common/http';
+import { Trainer } from '../trainer';
 
 @Component({
-	selector: 'app-sign-up',
-	templateUrl: './sign-up.component.html',
-	styleUrls: ['./sign-up.component.css']
+	selector: 'app-trainer-application',
+	templateUrl: './trainer-application.component.html',
+	styleUrls: ['./trainer-application.component.css']
 })
-export class SignUpComponent implements OnInit {
-<<<<<<< HEAD
-  
-  onSubmit(NewUser){
-    console.log(NewUser);
-  }
-  ngOnInit() {
-  }
-=======
+export class TrainerApplicationComponent implements OnInit {
 
 	branches;
+
 	private url;
-	newUser = new Client();
-	model = new Client();
+
+	newUser = new Trainer();
+
 	ngOnInit() {
 		this.fetchGyms();
 	}
->>>>>>> f58303239e3bcf24cc309a9c28e5362dc96aa6d0
 
 	constructor(private http: HttpClient){
 
@@ -45,18 +38,19 @@ export class SignUpComponent implements OnInit {
 
 	checkBranch(){
 		console.log(this.newUser);
+		
 	}
 
 	submit(){
 		console.log(this.newUser);
 		for(var x in this.branches){
-			if(this.branches[x].id == this.newUser.client_gym){
-				this.newUser.client_gym = this.branches[x];
+			if(this.branches[x].id == this.newUser.home_gym){
+				this.newUser.home_gym = this.branches[x];
 				break;
 			}
 		}
 		
-		this.url = "http://localhost:8085/AstroFitness/rest/client/post/newClient";
+		this.url = "http://localhost:8085/AstroFitness/rest/trainer/post/newTrainer";
 		this.http.post(this.url, this.newUser).subscribe(
 			data => {
 				console.log(data);
@@ -66,6 +60,5 @@ export class SignUpComponent implements OnInit {
 			}
 			)
 	}
-	submitted = false;
-	onSubmit() { this.submitted = false;}
+
 }
