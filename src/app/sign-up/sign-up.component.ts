@@ -10,11 +10,9 @@ import { HttpClient } from '@angular/common/http';
 export class SignUpComponent implements OnInit {
 
 	branches;
-
 	private url;
-
 	newUser = new Client();
-
+	model = new Client();
 	ngOnInit() {
 		this.fetchGyms();
 	}
@@ -38,7 +36,6 @@ export class SignUpComponent implements OnInit {
 
 	checkBranch(){
 		console.log(this.newUser);
-		
 	}
 
 	submit(){
@@ -60,5 +57,6 @@ export class SignUpComponent implements OnInit {
 			}
 			)
 	}
-
+	submitted = false;
+	onSubmit() { this.submitted = false;}
 }
