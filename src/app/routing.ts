@@ -5,6 +5,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import {UserLoginComponent} from './user-login/user-login.component';
 import {ForgetPuComponent} from './forget-pu/forget-pu.component'
 import { HomeComponent } from './home/home.component';
+import { NavComponent } from './nav/nav.component';
 export const appRoutes: Routes = [
     {
         path: 'admin-login', 
@@ -25,6 +26,10 @@ export const appRoutes: Routes = [
     {
         path: 'home',
         component: HomeComponent
+    },
+    {
+        path: 'nav',
+        component: NavComponent
     },
     {
         path: '**', 
