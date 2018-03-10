@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { Client } from './client';
 
 @Injectable()
@@ -8,32 +9,17 @@ export class UserService {
 	private LoggedIn: boolean;
 	private authURL: string;
 
-	client = new Client();
-
-
-	constructor(private http: HttpClient) {
+	constructor(private http: HttpClient, private router: Router) {
 		this.updateLoggedIn();
 	}
 
-	login(email: string, password: string){
-		// return this.http.post(this.authURL,{}).subscribe(
-		// 	res =>{
-		// 		if(res != null){
-		// 			this.setLoggedIn(true);
-		// 			return res;
-		// 		}
+	loginClient(email: string, password: string){
+		this.authURL = "http://localhost:8085/AstroFitness/rest/client/authenticate";
+		var client = new Client();
+		client.email = email;
+		client.password = password;
 
-		// 	},
-		// 	err =>{
-		// 		console.log(err);
-		// 	}
-		// 	)
-
-		console.log(this.client.email = email);
-		sessionStorage.setItem("userEmail", this.client.email);
-		this.setLoggedIn(true);
-		
-		return this.client;
+		return this.http.post(this.authURL, client);
 	}
 
 	logout(){

@@ -13,21 +13,37 @@ export class UserLoginComponent implements OnInit {
 
   private email: string;
   private password: string;
+  private invalidCredential: boolean;
 
   ngOnInit() {
     console.log(this.user.getLoggedIn());
+    this.invalidCredential = false;
   }
 
   loginUser(e){
   	e.preventDefault();
-  	console.log(this.email);
-  	console.log(this.password);
-  	if (this.user.login(this.email, this.password) != null){
-  		this.router.navigate(['client-page']);
-  	}
-  	else{
-  		console.log("login failed. Email or password is not correct.");
-  	}
+    var x = this.user.loginClient(this.email, this.password);
+    var client;
+    console.log(x);
+
+    x.subscribe(
+      res =>{
+        client = res;
+        if(client != null){
+          this.user.setLoggedIn(true);
+          sessionStorage.setItem("userEmail", client.email);
+          this.router.navigate(['client-page']);
+        }
+        else{
+          // console.log("login failed. Email or password is not correct.");
+          this.invalidCredential = true;
+        }
+        
+      },
+      err =>{
+        console.log(err);
+      }
+      );
   }
 
 }
