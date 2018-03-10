@@ -15,6 +15,7 @@ export class UserLoginComponent implements OnInit {
   private password: string;
 
   ngOnInit() {
+    console.log(this.user.getLoggedIn());
   }
 
   loginUser(e){

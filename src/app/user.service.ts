@@ -8,11 +8,11 @@ export class UserService {
 	private LoggedIn: boolean;
 	private authURL: string;
 
-	hardcodeClient = new Client("firstname", "lastname", "addresssss", "emailll", "paaaasssss");
+	client = new Client();
 
 
 	constructor(private http: HttpClient) {
-		this.LoggedIn = false;
+		this.updateLoggedIn();
 	}
 
 	login(email: string, password: string){
@@ -22,17 +22,23 @@ export class UserService {
 		// 			this.setLoggedIn(true);
 		// 			return res;
 		// 		}
-			
+
 		// 	},
 		// 	err =>{
 		// 		console.log(err);
 		// 	}
 		// 	)
 
-		console.log(email);
-		console.log(password);
+		console.log(this.client.email = email);
+		sessionStorage.setItem("userEmail", this.client.email);
 		this.setLoggedIn(true);
-		return this.hardcodeClient;
+		
+		return this.client;
+	}
+
+	logout(){
+		sessionStorage.clear();
+		this.updateLoggedIn();
 	}
 
 	setLoggedIn(x: boolean){
@@ -41,5 +47,12 @@ export class UserService {
 
 	getLoggedIn(){
 		return this.LoggedIn;
+	}
+
+	updateLoggedIn(){
+		if(sessionStorage.getItem("userEmail") != null)
+			this.setLoggedIn(true);
+		else
+			this.setLoggedIn(false);
 	}
 }

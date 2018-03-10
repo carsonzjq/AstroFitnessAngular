@@ -19,6 +19,8 @@ import { ManagerPageComponent } from './manager-page/manager-page.component';
 
 import { UserService } from './user.service';
 import { AuthGuard } from './auth.guard';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { AuthGuard } from './auth.guard';
     TrainerApplicationComponent,
     ClientPageComponent,
     TrainerPageComponent,
-    ManagerPageComponent
+    ManagerPageComponent,
+    HeaderComponent,
+    FooterComponent
   
   ],
   imports: [
