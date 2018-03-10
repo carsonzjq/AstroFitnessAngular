@@ -17,6 +17,10 @@ import { ClientPageComponent } from './client-page/client-page.component';
 import { TrainerPageComponent } from './trainer-page/trainer-page.component';
 import { ManagerPageComponent } from './manager-page/manager-page.component';
 
+import { UserService } from './user.service';
+import { AuthGuard } from './auth.guard';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,9 @@ import { ManagerPageComponent } from './manager-page/manager-page.component';
     TrainerApplicationComponent,
     ClientPageComponent,
     TrainerPageComponent,
-    ManagerPageComponent
+    ManagerPageComponent,
+    HeaderComponent,
+    FooterComponent
   
   ],
   imports: [
@@ -40,7 +46,7 @@ import { ManagerPageComponent } from './manager-page/manager-page.component';
 
 
   ],
-  providers: [],
+  providers: [UserService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
