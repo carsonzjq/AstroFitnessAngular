@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { HttpClient } from '@angular/common/http';
 import { INVALID } from '@angular/forms/src/model';
+=======
+import { UserService } from '../user.service';
+import { Router } from '@angular/router';
+>>>>>>> 33e86bcaee1d55820cfd341ccc9b9811f90209b2
 
 @Component({
   selector: 'app-user-login',
@@ -15,6 +20,7 @@ export class UserLoginComponent implements OnInit {
     email:""
   }
 
+<<<<<<< HEAD
   constructor(private http: HttpClient) { }
   onSubmit(user){
     console.log(user)
@@ -29,7 +35,27 @@ export class UserLoginComponent implements OnInit {
           )
   
     }
+=======
+  constructor(private router: Router, private user: UserService) { }
+
+  private email: string;
+  private password: string;
+
+>>>>>>> 33e86bcaee1d55820cfd341ccc9b9811f90209b2
   ngOnInit() {
+    console.log(this.user.getLoggedIn());
+  }
+
+  loginUser(e){
+  	e.preventDefault();
+  	console.log(this.email);
+  	console.log(this.password);
+  	if (this.user.login(this.email, this.password) != null){
+  		this.router.navigate(['client-page']);
+  	}
+  	else{
+  		console.log("login failed. Email or password is not correct.");
+  	}
   }
 
 }

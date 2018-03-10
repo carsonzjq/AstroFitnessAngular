@@ -20,9 +20,10 @@ export class SignUpComponent implements OnInit {
 	branches;
 	private url;
 	newUser = new Client();
-	model = new Client();
+	passwords_are_different: boolean;
 	ngOnInit() {
 		this.fetchGyms();
+		this.passwords_are_different = false;
 	}
 >>>>>>> f58303239e3bcf24cc309a9c28e5362dc96aa6d0
 
@@ -49,23 +50,36 @@ export class SignUpComponent implements OnInit {
 
 	submit(){
 		console.log(this.newUser);
-		for(var x in this.branches){
-			if(this.branches[x].id == this.newUser.client_gym){
-				this.newUser.client_gym = this.branches[x];
-				break;
+		if (this.newUser.password === this.newUser.confirm) {
+			for(var x in this.branches){
+				if(this.branches[x].id == this.newUser.client_gym){
+					this.newUser.client_gym = this.branches[x];
+					break;
+				}
 			}
-		}
 		
-		this.url = "http://localhost:8085/AstroFitness/rest/client/post/newClient";
-		this.http.post(this.url, this.newUser).subscribe(
-			data => {
-				console.log(data);
-			},
-			error => {
-				console.log(error);
-			}
+			this.url = "http://localhost:8085/AstroFitness/rest/client/post/newClient";
+			this.http.post(this.url, this.newUser).subscribe(
+				data => {
+					console.log(data);
+				},
+				error => {
+					console.log(error);
+				}
 			)
+		} else {
+			this.passwords_are_different = true;
+		}
 	}
+
 	submitted = false;
-	onSubmit() { this.submitted = false;}
+	//onSubmit() { this.submitted = false;}
+
+	confirm() {
+		if (this.newUser.password === this.newUser.confirm) {
+			return true;
+		} else {
+			return false;
+		}
+			}
 }

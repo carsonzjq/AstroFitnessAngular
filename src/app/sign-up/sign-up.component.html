@@ -57,18 +57,31 @@
     <div class="form-group">
       <label for="firstname" class="control-label" style="color:white">First name</label>
       <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First name" required [(ngModel)]="newUser.fname" #fname="ngModel">
+      <div [hidden]="fname.valid || fname.pristine"
+            class="alert alert-danger">
+            Enter your first name
+      </div>
     </div>
     <div class="form-group">
       <label for="lastname" class="control-label" style="color:white">Last name</label>
       <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last name" required [(ngModel)]="newUser.lname" #lname="ngModel">
+      <div [hidden]="lname.valid || lname.pristine"
+            class="alert alert-danger">
+            Enter your last name
+      </div>
     </div>
     <div class="form-group">
       <label for="address" class="control-label" style="color:white">Address</label>
       <input type="text" class="form-control" id="address" name="address" placeholder="Address" required [(ngModel)]="newUser.address" #address="ngModel">
+      <div [hidden]="address.valid || address.pristine"
+            class="alert alert-danger">
+            Enter your address
+      </div>
     </div>
     <div class="form-group">
       <label for="branch" class="control-label" style="color:white">Branch</label>
-      <select class="form-control" id="branch" name="branch" [(ngModel)]="newUser.client_gym" #branch="ngModel" (change)="checkBranch()">
+      <select class="form-control" id="branch" name="branch" [(ngModel)]="newUser.client_gym" 
+      #branch="ngModel" (change)="checkBranch()">
         <option *ngFor="let bran of branches" [value]="bran.id">{{bran.name}}, {{bran.address}}</option>
       </select>
     </div>
@@ -76,27 +89,31 @@
       <label for="inputEmail" class="control-label" style="color:white">Email</label>
       <input type="email" class="form-control" name="email" placeholder="Email" required 
             [(ngModel)]="newUser.email" #email="ngModel">
+      <div [hidden]="email.valid || email.pristine"
+            class="alert alert-danger">
+            Enter a valid email
+      </div>
     </div>
     <div class="form-group">  <!-- password -->
       <label for="inputPassword" class="control-label" style="color:white">Password</label>
-      <input type="text" class="form-control" id="password"
+      <input type="password" class="form-control" id="password"
               required
-              [(ngModel)]="model.name" name="name"
-              #name="ngModel">
-      <div [hidden]="name.valid || name.pristine"
+              [(ngModel)]="newUser.password" name="password"
+              #password="ngModel">
+      <div [hidden]="password.valid || password.pristine"
             class="alert alert-danger">
-            Passwords don't match
+            Enter password
       </div>
     </div>
     <div class="form-group">  <!-- confirm password -->
-      <label for="inputPassword" class="control-label" style="color:white">Confirm Password</label>
+      <label for="confirmPassword" class="control-label" style="color:white">Confirm Password</label>
           <input type="password" class="form-control" id="confirm"
                  required
-                 [(ngModel)]="model.confirm" name="confirm"
+                 [(ngModel)]="newUser.confirm" name="confirm"
                  #confirm="ngModel">
-          <div [hidden]="confirm.valid || confirm.pristine"
+          <div *ngIf="this.passwords_are_different"
                class="alert alert-danger">
-               Name is required
+               Passwords do not match
           </div>
     </div>
     <div class="form-group">  <!-- submit -->

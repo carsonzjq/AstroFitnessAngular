@@ -29,6 +29,10 @@ import { TrainerPageComponent } from './trainer-page/trainer-page.component';
 import { ManagerPageComponent } from './manager-page/manager-page.component';
 >>>>>>> f58303239e3bcf24cc309a9c28e5362dc96aa6d0
 
+import { UserService } from './user.service';
+import { AuthGuard } from './auth.guard';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -47,8 +51,14 @@ import { ManagerPageComponent } from './manager-page/manager-page.component';
     TrainerApplicationComponent,
     ClientPageComponent,
     TrainerPageComponent,
+<<<<<<< HEAD
     ManagerPageComponent
 >>>>>>> f58303239e3bcf24cc309a9c28e5362dc96aa6d0
+=======
+    ManagerPageComponent,
+    HeaderComponent,
+    FooterComponent
+>>>>>>> 33e86bcaee1d55820cfd341ccc9b9811f90209b2
   
   ],
   imports: [
@@ -59,7 +69,11 @@ import { ManagerPageComponent } from './manager-page/manager-page.component';
 
 
   ],
+<<<<<<< HEAD
   providers: [ServicesService],
+=======
+  providers: [UserService, AuthGuard],
+>>>>>>> 33e86bcaee1d55820cfd341ccc9b9811f90209b2
   bootstrap: [AppComponent]
 })
 export class AppModule { }
