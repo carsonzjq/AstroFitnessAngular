@@ -13,7 +13,6 @@ import { Appointements } from '../appointements';
 export class AppointmentsComponent implements OnInit {
 
   trainers;
-	private url;
  	url = "http://localhost:8085/AstroFitness/rest/appointment/get/all" + sessionStorage.getItem("userEmail");
   
 	constructor(private user: UserService, private http: HttpClient) { }
