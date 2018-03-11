@@ -4,7 +4,10 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { HomeComponent } from './home/home.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
+<<<<<<< HEAD
 //import { BranchesComponent } from './branches/branches.component';
+=======
+>>>>>>> 224acf07e7e3c3352a0c7dad997a3fd4c6ba6f46
 import { ForumPageComponent } from './forum-page/forum-page.component';
 import { TrainerApplicationComponent } from './trainer-application/trainer-application.component';
 import { ClientPageComponent } from './client-page/client-page.component';

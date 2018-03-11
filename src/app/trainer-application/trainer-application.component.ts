@@ -52,10 +52,14 @@ export class TrainerApplicationComponent implements OnInit {
 					console.log(error);
 				}
 				)
+				this.router.navigate(['user-login']);
 		} else {
 			this.passwords_are_different = true;
 		}
 	 this.router.navigate(['user-login']);
 	}
+<<<<<<< HEAD
   
+=======
+>>>>>>> 224acf07e7e3c3352a0c7dad997a3fd4c6ba6f46
 }
