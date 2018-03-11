@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Trainer } from '../trainer';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-trainer-application',
@@ -19,7 +20,7 @@ export class TrainerApplicationComponent implements OnInit {
 		this.fetchGyms();
 	}
 
-	constructor(private http: HttpClient){
+	constructor(private http: HttpClient, private router: Router){
 
 	}
 
@@ -32,14 +33,6 @@ export class TrainerApplicationComponent implements OnInit {
 			})
 	}
 
-	check(){
-		console.log(this.newUser);
-	}
-
-	checkBranch(){
-		console.log(this.newUser);
-		
-	}
 
 	submit(){
 		console.log(this.newUser);
@@ -58,7 +51,9 @@ export class TrainerApplicationComponent implements OnInit {
 			error => {
 				console.log(error);
 			}
-			)
+			);
+
+		this.router.navigate(['user-login']);
 	}
 
 }
