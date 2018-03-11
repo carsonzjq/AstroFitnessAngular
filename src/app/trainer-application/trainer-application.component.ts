@@ -33,8 +33,6 @@ export class TrainerApplicationComponent implements OnInit {
 				console.log(this.branches);
 			})
 	}
-
-
 	submit(){
 		if (this.newUser.password === this.newUser.confirm) {
 			console.log(this.newUser);
@@ -45,7 +43,7 @@ export class TrainerApplicationComponent implements OnInit {
 				}
 			}
 		
-			this.url = "http://localhost:8085/AstroFitness/rest/trainer/post/newTrainer";
+     		this.url = "http://localhost:8085/AstroFitness/rest/trainer/post/newTrainer";
 			this.http.post(this.url, this.newUser).subscribe(
 				data => {
 					console.log(data);
@@ -58,5 +56,10 @@ export class TrainerApplicationComponent implements OnInit {
 		} else {
 			this.passwords_are_different = true;
 		}
+	 this.router.navigate(['user-login']);
 	}
+<<<<<<< HEAD
+  
+=======
+>>>>>>> 224acf07e7e3c3352a0c7dad997a3fd4c6ba6f46
 }

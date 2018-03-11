@@ -6,6 +6,8 @@ import {RouterModule} from '@angular/router'
 
 
 import { AppComponent } from './app.component';
+import { ServicesService} from './services.service'
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { appRoutes } from './routing';
@@ -15,7 +17,7 @@ import { TrainerApplicationComponent } from './trainer-application/trainer-appli
 import { ClientPageComponent } from './client-page/client-page.component';
 import { TrainerPageComponent } from './trainer-page/trainer-page.component';
 import { ManagerPageComponent } from './manager-page/manager-page.component';
-
+import {NavComponent} from './nav/nav.component'
 import { UserService } from './user.service';
 import { AuthGuard } from './auth.guard';
 import { ClientGuard } from './client.guard';
@@ -34,15 +36,18 @@ import { ForumPageComponent } from './forum-page/forum-page.component';
     UserLoginComponent,
     SignUpComponent,
     HomeComponent,
+    FooterComponent,
     AdminPageComponent,
     TrainerApplicationComponent,
     ClientPageComponent,
     TrainerPageComponent,
+    NavComponent,
     ManagerPageComponent,
     HeaderComponent,
     FooterComponent,
     AppointmentsComponent,
-    ForumPageComponent
+    ForumPageComponent,
+    AdminLoginComponent
 
   
   ],

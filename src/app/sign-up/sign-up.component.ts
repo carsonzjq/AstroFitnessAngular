@@ -76,5 +76,5 @@ export class SignUpComponent implements OnInit {
 		} else {
 			return false;
 		}
-			}
+	   }
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {UserService} from '../user.service';
 import {Client} from '../client';
+import {ForumPageComponent} from '../forum-page/forum-page.component';
+//import {AppointmentsComponent} from '../appointments/AppointmentsComponent'
 
 @Component({
 	selector: 'app-client-page',
