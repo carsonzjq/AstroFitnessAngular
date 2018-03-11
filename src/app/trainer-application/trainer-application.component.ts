@@ -58,8 +58,4 @@ export class TrainerApplicationComponent implements OnInit {
 		}
 	 this.router.navigate(['user-login']);
 	}
-<<<<<<< HEAD
-  
-=======
->>>>>>> 224acf07e7e3c3352a0c7dad997a3fd4c6ba6f46
 }
