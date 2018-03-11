@@ -24,6 +24,7 @@ import { TrainerGuard } from './trainer.guard';
 import { ManagerGuard } from './manager.guard';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ForumPageComponent } from './forum-page/forum-page.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { FooterComponent } from './footer/footer.component';
     TrainerPageComponent,
     ManagerPageComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ForumPageComponent
   
   ],
   imports: [
