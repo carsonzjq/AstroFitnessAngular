@@ -16,6 +16,7 @@ import { TrainerApplicationComponent } from './trainer-application/trainer-appli
 import { ClientPageComponent } from './client-page/client-page.component';
 import { TrainerPageComponent } from './trainer-page/trainer-page.component';
 import { ManagerPageComponent } from './manager-page/manager-page.component';
+import { ForumPageComponent } from './forum-page/forum-page.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ManagerPageComponent } from './manager-page/manager-page.component';
     TrainerApplicationComponent,
     ClientPageComponent,
     TrainerPageComponent,
-    ManagerPageComponent
+    ManagerPageComponent,
+    ForumPageComponent
   
   ],
   imports: [

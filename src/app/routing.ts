@@ -5,6 +5,8 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { HomeComponent } from './home/home.component';
 import { BranchesComponent } from './branches/branches.component';
 import { TrainerApplicationComponent } from './trainer-application/trainer-application.component';
+import { ForumPageComponent } from './forum-page/forum-page.component';
+
 export const appRoutes: Routes = [
     {
         path: '', 
@@ -29,6 +31,10 @@ export const appRoutes: Routes = [
     {
         path: 'home',
         component: HomeComponent
+    },
+    {
+        path: 'forum',
+        component: ForumPageComponent
     },
     {
         path: '**', 
