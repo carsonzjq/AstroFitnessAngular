@@ -4,7 +4,6 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { HomeComponent } from './home/home.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
-import { BranchesComponent } from './branches/branches.component';
 import { ForumPageComponent } from './forum-page/forum-page.component';
 import { TrainerApplicationComponent } from './trainer-application/trainer-application.component';
 import { ClientPageComponent } from './client-page/client-page.component';
