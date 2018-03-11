@@ -9,17 +9,24 @@ import { UserService } from '../user.service';
 export class HeaderComponent implements OnInit {
 
 	private loggedIn;
+	private accountType;
 
 	constructor(private user: UserService) { 
 		this.loggedIn = this.user.getLoggedIn();
+		this.accountType = this.user.getAccountType();
 	}
 
 	ngOnInit() {
 	}
 
 	ngDoCheck(){
+		
+
 		this.user.updateLoggedIn();
+		this.user.updateAccountType();
 		this.loggedIn = this.user.getLoggedIn();
+		this.accountType = this.user.getAccountType();
+
 	}
 
 	logout(){

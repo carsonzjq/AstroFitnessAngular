@@ -18,9 +18,15 @@ import { ManagerPageComponent } from './manager-page/manager-page.component';
 
 import { UserService } from './user.service';
 import { AuthGuard } from './auth.guard';
+import { ClientGuard } from './client.guard';
+import { TrainerGuard } from './trainer.guard';
+import { ManagerGuard } from './manager.guard';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+
 import { AppointmentsComponent } from './appointments/appointments.component';
+import { ForumPageComponent } from './forum-page/forum-page.component';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +41,9 @@ import { AppointmentsComponent } from './appointments/appointments.component';
     ManagerPageComponent,
     HeaderComponent,
     FooterComponent,
-    AppointmentsComponent
+    AppointmentsComponent,
+    ForumPageComponent
+
   
   ],
   imports: [
@@ -46,7 +54,7 @@ import { AppointmentsComponent } from './appointments/appointments.component';
 
 
   ],
-  providers: [UserService, AuthGuard],
+  providers: [UserService, AuthGuard, ClientGuard, TrainerGuard, ManagerGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

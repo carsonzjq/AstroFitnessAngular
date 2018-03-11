@@ -31,8 +31,8 @@
     </div>
     <div class="form-group">
       <label for="branch" class="control-label" style="color:white">Branch</label>
-      <select class="form-control" id="branch" name="branch" [(ngModel)]="newUser.client_gym" 
-      #branch="ngModel" (change)="checkBranch()" required>
+      <select class="form-control" id="branch" name="branch" [(ngModel)]="newUser.home_gym" 
+      #branch="ngModel" required>
         <option *ngFor="let bran of branches" [value]="bran.id">{{bran.name}}, {{bran.address}}</option>
       </select>
     </div>
@@ -68,7 +68,7 @@
           </div>
     </div>
     <div class="form-group">  <!-- submit -->
-      <button type="submit" class="btn btn-default" (click)="check()" [disabled]="!registerForm.form.valid">Submit</button>
+      <button type="submit" class="btn btn-default" [disabled]="!registerForm.form.valid">Submit</button>
     </div>
   </form>
 </div>

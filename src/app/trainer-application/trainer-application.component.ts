@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Trainer } from '../trainer';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-trainer-application',
@@ -20,7 +21,7 @@ export class TrainerApplicationComponent implements OnInit {
 		this.fetchGyms();
 	}
 
-	constructor(private http: HttpClient){
+	constructor(private http: HttpClient, private router: Router){
 
 	}
 
@@ -33,14 +34,6 @@ export class TrainerApplicationComponent implements OnInit {
 			})
 	}
 
-	check(){
-		console.log(this.newUser);
-	}
-
-	checkBranch(){
-		console.log(this.newUser);
-		
-	}
 
 	submit(){
 		if (this.newUser.password === this.newUser.confirm) {
@@ -65,4 +58,5 @@ export class TrainerApplicationComponent implements OnInit {
 			this.passwords_are_different = true;
 		}
 	}
+  this.router.navigate(['user-login']);
 }
