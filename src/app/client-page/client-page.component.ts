@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 import {UserService} from '../user.service';
+import {Client} from '../client';
 
 @Component({
 	selector: 'app-client-page',
@@ -8,10 +10,16 @@ import {UserService} from '../user.service';
 })
 export class ClientPageComponent implements OnInit {
 
-	constructor(private user: UserService) { }
+	client = new Client();
+	url = "http://localhost:8085/AstroFitness/rest/client/getByEmail/" + sessionStorage.getItem("userEmail");
+
+	constructor(private user: UserService, private http: HttpClient) { }
 
 	ngOnInit() {
-		// console.log(this.user.getLoggedIn());
+		this.http.get(this.url).subscribe(
+			data => {this.client = data;console.log(this.client)},
+			err => console.log(err)
+			)
 	}
 
 }
