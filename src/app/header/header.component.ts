@@ -20,13 +20,10 @@ export class HeaderComponent implements OnInit {
 	}
 
 	ngDoCheck(){
-		
-
 		this.user.updateLoggedIn();
 		this.user.updateAccountType();
 		this.loggedIn = this.user.getLoggedIn();
 		this.accountType = this.user.getAccountType();
-
 	}
 
 	logout(){

@@ -42,8 +42,8 @@ export class TrainerApplicationComponent implements OnInit {
 					break;
 				}
 			}
-		
-     		this.url = "http://localhost:8085/AstroFitness/rest/trainer/post/newTrainer";
+
+			this.url = "http://localhost:8085/AstroFitness/rest/trainer/post/newTrainer";
 			this.http.post(this.url, this.newUser).subscribe(
 				data => {
 					console.log(data);
@@ -56,6 +56,6 @@ export class TrainerApplicationComponent implements OnInit {
 		} else {
 			this.passwords_are_different = true;
 		}
-	 this.router.navigate(['user-login']);
 	}
+
 }

@@ -7,14 +7,14 @@
   <form data-toggle="validator" role="form" method="POST" (ngSubmit)="submit()" #registerForm="ngForm">
     <div class="form-group">
       <label for="branch" class="control-label" style="color:white">Trainer</label>
-      <select class="form-control" id="branch" name="branch" [(ngModel)]="newUser.client_gym" 
+      <select class="form-control" id="branch" name="branch" [(ngModel)]="client.client_gym" 
       #branch="ngModel" (change)="checkBranch()">
         <option *ngFor="let bran of branches" [value]="bran.id">{{bran.name}}, {{bran.address}}</option>
       </select>
     </div>
     <div class="form-group">
       <label for="branch" class="control-label" style="color:white">Time</label>
-      <select class="form-control" id="branch" name="branch" [(ngModel)]="newUser.client_gym" 
+      <select class="form-control" id="branch" name="branch" [(ngModel)]="client.client_gym" 
       #branch="ngModel" (change)="checkBranch()">
         <option *ngFor="let bran of branches" [value]="bran.id">{{bran.name}}, {{bran.address}}</option>
       </select>

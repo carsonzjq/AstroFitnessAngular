@@ -6,17 +6,18 @@ import {UserService} from '../user.service';
 import { Appointements } from '../appointements';
 
 @Component({
-  selector: 'app-appointments',
-  templateUrl: './appointments.component.html',
-  styleUrls: ['./appointments.component.css']
+	selector: 'app-appointments',
+	templateUrl: './appointments.component.html',
+	styleUrls: ['./appointments.component.css']
 })
 export class AppointmentsComponent implements OnInit {
 
-  trainers;
- 	url = "http://localhost:8085/AstroFitness/rest/appointment/get/all" + sessionStorage.getItem("userEmail");
-  
+	client = new Client();
+	trainers;
+	url = "http://localhost:8085/AstroFitness/rest/appointment/get/" + sessionStorage.getItem("userEmail");
+
 	constructor(private user: UserService, private http: HttpClient) { }
-  public app =new Appointements();
+	public app =new Appointements();
 	ngOnInit() {
 		this.http.get(this.url).subscribe(
 			data => this.app = data,
@@ -24,7 +25,7 @@ export class AppointmentsComponent implements OnInit {
 			)
 	}
 
-  fetchTrainers(){
+	fetchTrainers(){
 		this.url="http://localhost:8085/AstroFitness/rest/appointment/get/all";
 		this.http.get(this.url).subscribe(
 			data => {
