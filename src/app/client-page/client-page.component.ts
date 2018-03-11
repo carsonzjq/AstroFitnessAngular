@@ -17,7 +17,7 @@ export class ClientPageComponent implements OnInit {
 
 	ngOnInit() {
 		this.http.get(this.url).subscribe(
-			data => {this.client = data;console.log(this.client)},
+			data => this.client = data,
 			err => console.log(err)
 			)
 	}

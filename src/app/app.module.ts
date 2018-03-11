@@ -13,7 +13,6 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { appRoutes } from './routing';
 import { HomeComponent } from './home/home.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
-import { BranchesComponent } from './branches/branches.component';
 import { TrainerApplicationComponent } from './trainer-application/trainer-application.component';
 import { ClientPageComponent } from './client-page/client-page.component';
 import { TrainerPageComponent } from './trainer-page/trainer-page.component';
@@ -21,8 +20,15 @@ import { ManagerPageComponent } from './manager-page/manager-page.component';
 import {NavComponent} from './nav/nav.component'
 import { UserService } from './user.service';
 import { AuthGuard } from './auth.guard';
+import { ClientGuard } from './client.guard';
+import { TrainerGuard } from './trainer.guard';
+import { ManagerGuard } from './manager.guard';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+
+import { AppointmentsComponent } from './appointments/appointments.component';
+import { ForumPageComponent } from './forum-page/forum-page.component';
+
 
 @NgModule({
   declarations: [
@@ -32,14 +38,19 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     FooterComponent,
     AdminPageComponent,
-    BranchesComponent,
     TrainerApplicationComponent,
     ClientPageComponent,
     TrainerPageComponent,
     NavComponent,
     ManagerPageComponent,
     HeaderComponent,
+<<<<<<< HEAD
     FooterComponent
+=======
+    FooterComponent,
+    AppointmentsComponent,
+    ForumPageComponent
+>>>>>>> 64e19df1d54ad6a6275cf16292d5f1dcaf67024a
 
   
   ],
@@ -51,7 +62,11 @@ import { FooterComponent } from './footer/footer.component';
 
 
   ],
+<<<<<<< HEAD
   providers: [ServicesService, UserService, AuthGuard],
+=======
+  providers: [UserService, AuthGuard, ClientGuard, TrainerGuard, ManagerGuard],
+>>>>>>> 64e19df1d54ad6a6275cf16292d5f1dcaf67024a
   bootstrap: [AppComponent]
 })
 export class AppModule { }

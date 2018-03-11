@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Trainer } from '../trainer';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-trainer-application',
@@ -10,16 +11,17 @@ import { Trainer } from '../trainer';
 export class TrainerApplicationComponent implements OnInit {
 
 	branches;
-
+	passwords_are_different: boolean;
 	private url;
 
 	newUser = new Trainer();
 
 	ngOnInit() {
+		this.passwords_are_different = false;
 		this.fetchGyms();
 	}
 
-	constructor(private http: HttpClient){
+	constructor(private http: HttpClient, private router: Router){
 
 	}
 
@@ -32,33 +34,29 @@ export class TrainerApplicationComponent implements OnInit {
 			})
 	}
 
-	check(){
-		console.log(this.newUser);
-	}
-
-	checkBranch(){
-		console.log(this.newUser);
-		
-	}
 
 	submit(){
-		console.log(this.newUser);
-		for(var x in this.branches){
-			if(this.branches[x].id == this.newUser.home_gym){
-				this.newUser.home_gym = this.branches[x];
-				break;
+		if (this.newUser.password === this.newUser.confirm) {
+			console.log(this.newUser);
+			for(var x in this.branches){
+				if(this.branches[x].id == this.newUser.home_gym){
+					this.newUser.home_gym = this.branches[x];
+					break;
+				}
 			}
-		}
 		
-		this.url = "http://localhost:8085/AstroFitness/rest/trainer/post/newTrainer";
-		this.http.post(this.url, this.newUser).subscribe(
-			data => {
-				console.log(data);
-			},
-			error => {
-				console.log(error);
-			}
-			)
+			this.url = "http://localhost:8085/AstroFitness/rest/trainer/post/newTrainer";
+			this.http.post(this.url, this.newUser).subscribe(
+				data => {
+					console.log(data);
+				},
+				error => {
+					console.log(error);
+				}
+				)
+		} else {
+			this.passwords_are_different = true;
+		}
 	}
-
+  this.router.navigate(['user-login']);
 }

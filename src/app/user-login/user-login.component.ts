@@ -28,28 +28,73 @@ export class UserLoginComponent implements OnInit {
 
   loginUser(e){
   	e.preventDefault();
+    var user;
     var x = this.user.loginClient(this.email, this.password);
-    var client;
-    console.log(x);
+    var y = this.user.loginTrainer(this.email, this.password);
+    var z = this.user.loginManager(this.email, this.password);
+    
 
     x.subscribe(
       res =>{
-        client = res;
-        if(client != null){
+        user = res;
+        if(user != null){
           this.user.setLoggedIn(true);
-          sessionStorage.setItem("userEmail", client.email);
+          this.user.setAccountType("client");
+          sessionStorage.setItem("userEmail", user.email);
+          sessionStorage.setItem("accountType", "client");
           this.router.navigate(['client-page']);
         }
         else{
           // console.log("login failed. Email or password is not correct.");
-          this.invalidCredential = true;
+          // this.invalidCredential = true;
         }
-        
       },
       err =>{
         console.log(err);
       }
       );
+
+    y.subscribe(
+      res =>{
+        user = res;
+        if(user != null){
+          this.user.setLoggedIn(true);
+          this.user.setAccountType("trainer");
+          sessionStorage.setItem("userEmail", user.email);
+          sessionStorage.setItem("accountType", "trainer");
+          this.router.navigate(['trainer-page']);
+        }
+        else{
+          // console.log("login failed. Email or password is not correct.");
+          // this.invalidCredential = true;
+        }
+      },
+      err =>{
+        console.log(err);
+      }
+      );
+
+    z.subscribe(
+      res =>{
+        user = res;
+        if(user != null){
+          this.user.setLoggedIn(true);
+          this.user.setAccountType("manager");
+          sessionStorage.setItem("userEmail", user.email);
+          sessionStorage.setItem("accountType", "manager");
+          this.router.navigate(['manager-page']);
+        }
+        else{
+          // console.log("login failed. Email or password is not correct.");
+          this.invalidCredential = true;
+        }
+      },
+      err =>{
+        console.log(err);
+      }
+      );
+    // this.invalidCredential = true;
+
   }
 
 }
