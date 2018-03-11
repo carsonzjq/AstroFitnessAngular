@@ -44,13 +44,10 @@ import { ForumPageComponent } from './forum-page/forum-page.component';
     NavComponent,
     ManagerPageComponent,
     HeaderComponent,
-<<<<<<< HEAD
-    FooterComponent
-=======
     FooterComponent,
     AppointmentsComponent,
-    ForumPageComponent
->>>>>>> 64e19df1d54ad6a6275cf16292d5f1dcaf67024a
+    ForumPageComponent,
+    AdminLoginComponent
 
   
   ],
@@ -62,11 +59,7 @@ import { ForumPageComponent } from './forum-page/forum-page.component';
 
 
   ],
-<<<<<<< HEAD
-  providers: [ServicesService, UserService, AuthGuard],
-=======
   providers: [UserService, AuthGuard, ClientGuard, TrainerGuard, ManagerGuard],
->>>>>>> 64e19df1d54ad6a6275cf16292d5f1dcaf67024a
   bootstrap: [AppComponent]
 })
 export class AppModule { }

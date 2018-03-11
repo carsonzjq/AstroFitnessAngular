@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {UserService} from '../user.service';
+import {Client} from '../client';
+import { Appointements } from '../appointements';
 
 @Component({
   selector: 'app-appointments',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppointmentsComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+   
+	url = "http://localhost:8085/AstroFitness/rest/appointment/get/all" + sessionStorage.getItem("userEmail");
+  
+	constructor(private user: UserService, private http: HttpClient) { }
+  public app =new Appointements();
+	ngOnInit() {
+		this.http.get(this.url).subscribe(
+			data => this.app = data,
+			err => console.log(err)
+			)
+	}
 }
