@@ -33,8 +33,6 @@ export class TrainerApplicationComponent implements OnInit {
 				console.log(this.branches);
 			})
 	}
-
-
 	submit(){
 		if (this.newUser.password === this.newUser.confirm) {
 			console.log(this.newUser);
@@ -54,10 +52,10 @@ export class TrainerApplicationComponent implements OnInit {
 					console.log(error);
 				}
 				)
+				this.router.navigate(['user-login']);
 		} else {
 			this.passwords_are_different = true;
 		}
-		this.router.navigate(['user-login']);
 	}
 
 }

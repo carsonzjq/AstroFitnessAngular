@@ -13,6 +13,7 @@ import { AuthGuard } from './auth.guard';
 import { ClientGuard } from './client.guard';
 import { TrainerGuard } from './trainer.guard';
 import { ManagerGuard } from './manager.guard';
+import {AdminLoginComponent} from './admin-login/admin-login.component'
 
 export const appRoutes: Routes = [
     {
@@ -52,6 +53,11 @@ export const appRoutes: Routes = [
         path: 'trainer-page',
         canActivate: [AuthGuard, TrainerGuard],
         component: TrainerPageComponent
+    },
+    {
+        path: 'admin-login',
+        component: AdminLoginComponent
+
     },
     {
         path: 'manager-page',

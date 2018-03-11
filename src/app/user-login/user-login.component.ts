@@ -8,6 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent implements OnInit {
+  public  client={
+    username:"",
+    lastName:"",
+    FirstName:"",
+    email:""
+  }
 
   constructor(private router: Router, private user: UserService) { }
 
