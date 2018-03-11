@@ -1,10 +1,16 @@
 <div class="jumbotron text-center" style="background-color:#7BD5C6">
-  <table>
-    <tr>
-      <th>Time</th>
-      <th>Post</th>
+
+ <div class="container">
+  
+  
+  <table class="table table-hover table-dark">
+    <thead class="thead-light">
+    <tr scope="row center">
+      <th class="text-center" scope="col">Time</th>
+      <th class="text-center" scope="col">Post</th>
     </tr>
-    <tr *ngFor="let post of posts">
+  </thead>
+    <tr *ngFor="let post of posts" scope="row">
       <td>{{ post.comment_date }} at {{post.comment_time}}</td>
       <td>{{ post.forum_comment }}</td>
     </tr>
@@ -13,4 +19,7 @@
     <input type="text" placeholder="Comment" required [(ngModel)]="newForum.forum_comment" id="forum_comment" name="forum_comment">
     <input type="submit" value="Submit">
   </form>
+
+</div>
+
 </div>
