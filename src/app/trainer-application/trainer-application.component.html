@@ -62,7 +62,7 @@
                  required
                  [(ngModel)]="newUser.confirm" name="confirm"
                  #confirm="ngModel">
-          <div [hidden]="true"
+          <div *ngIf="this.passwords_are_different"
                class="alert alert-danger">
                Passwords do not match
           </div>

@@ -11,7 +11,6 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { appRoutes } from './routing';
 import { HomeComponent } from './home/home.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
-import { BranchesComponent } from './branches/branches.component';
 import { TrainerApplicationComponent } from './trainer-application/trainer-application.component';
 import { ClientPageComponent } from './client-page/client-page.component';
 import { TrainerPageComponent } from './trainer-page/trainer-page.component';
@@ -24,7 +23,10 @@ import { TrainerGuard } from './trainer.guard';
 import { ManagerGuard } from './manager.guard';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+
+import { AppointmentsComponent } from './appointments/appointments.component';
 import { ForumPageComponent } from './forum-page/forum-page.component';
+
 
 @NgModule({
   declarations: [
@@ -33,14 +35,15 @@ import { ForumPageComponent } from './forum-page/forum-page.component';
     SignUpComponent,
     HomeComponent,
     AdminPageComponent,
-    BranchesComponent,
     TrainerApplicationComponent,
     ClientPageComponent,
     TrainerPageComponent,
     ManagerPageComponent,
     HeaderComponent,
     FooterComponent,
+    AppointmentsComponent,
     ForumPageComponent
+
   
   ],
   imports: [

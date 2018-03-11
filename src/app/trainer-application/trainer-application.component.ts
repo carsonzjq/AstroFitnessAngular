@@ -11,12 +11,13 @@ import { Router } from '@angular/router';
 export class TrainerApplicationComponent implements OnInit {
 
 	branches;
-
+	passwords_are_different: boolean;
 	private url;
 
 	newUser = new Trainer();
 
 	ngOnInit() {
+		this.passwords_are_different = false;
 		this.fetchGyms();
 	}
 
@@ -35,25 +36,27 @@ export class TrainerApplicationComponent implements OnInit {
 
 
 	submit(){
-		console.log(this.newUser);
-		for(var x in this.branches){
-			if(this.branches[x].id == this.newUser.home_gym){
-				this.newUser.home_gym = this.branches[x];
-				break;
+		if (this.newUser.password === this.newUser.confirm) {
+			console.log(this.newUser);
+			for(var x in this.branches){
+				if(this.branches[x].id == this.newUser.home_gym){
+					this.newUser.home_gym = this.branches[x];
+					break;
+				}
 			}
-		}
 		
-		this.url = "http://localhost:8085/AstroFitness/rest/trainer/post/newTrainer";
-		this.http.post(this.url, this.newUser).subscribe(
-			data => {
-				console.log(data);
-			},
-			error => {
-				console.log(error);
-			}
-			);
-
-		this.router.navigate(['user-login']);
+			this.url = "http://localhost:8085/AstroFitness/rest/trainer/post/newTrainer";
+			this.http.post(this.url, this.newUser).subscribe(
+				data => {
+					console.log(data);
+				},
+				error => {
+					console.log(error);
+				}
+				)
+		} else {
+			this.passwords_are_different = true;
+		}
 	}
-
+  this.router.navigate(['user-login']);
 }
