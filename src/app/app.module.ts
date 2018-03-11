@@ -19,6 +19,9 @@ import { ManagerPageComponent } from './manager-page/manager-page.component';
 
 import { UserService } from './user.service';
 import { AuthGuard } from './auth.guard';
+import { ClientGuard } from './client.guard';
+import { TrainerGuard } from './trainer.guard';
+import { ManagerGuard } from './manager.guard';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
@@ -46,7 +49,7 @@ import { FooterComponent } from './footer/footer.component';
 
 
   ],
-  providers: [UserService, AuthGuard],
+  providers: [UserService, AuthGuard, ClientGuard, TrainerGuard, ManagerGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

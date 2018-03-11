@@ -1,5 +1,5 @@
 
-class Gym {
+export class Gym {
 
 	constructor(
 		public gym_id?: number,

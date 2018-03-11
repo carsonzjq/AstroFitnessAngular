@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Client } from '../client';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-sign-up',
@@ -18,7 +19,7 @@ export class SignUpComponent implements OnInit {
 		this.passwords_are_different = false;
 	}
 
-	constructor(private http: HttpClient){
+	constructor(private http: HttpClient, private router: Router){
 
 	}
 
@@ -57,7 +58,10 @@ export class SignUpComponent implements OnInit {
 				error => {
 					console.log(error);
 				}
-			)
+			);
+
+			this.router.navigate(['user-login']);
+
 		} else {
 			this.passwords_are_different = true;
 		}

@@ -6,7 +6,13 @@ import { HomeComponent } from './home/home.component';
 import { BranchesComponent } from './branches/branches.component';
 import { TrainerApplicationComponent } from './trainer-application/trainer-application.component';
 import { ClientPageComponent } from './client-page/client-page.component';
+import { TrainerPageComponent } from './trainer-page/trainer-page.component'
+import { ManagerPageComponent } from './manager-page/manager-page.component';
 import { AuthGuard } from './auth.guard';
+import { ClientGuard } from './client.guard';
+import { TrainerGuard } from './trainer.guard';
+import { ManagerGuard } from './manager.guard';
+
 export const appRoutes: Routes = [
     {
         path: '', 
@@ -34,8 +40,18 @@ export const appRoutes: Routes = [
     },
     {
         path: 'client-page',
-        canActivate: [AuthGuard],
+        canActivate: [AuthGuard, ClientGuard],
         component: ClientPageComponent
+    },
+    {
+        path: 'trainer-page',
+        canActivate: [AuthGuard, TrainerGuard],
+        component: TrainerPageComponent
+    },
+    {
+        path: 'manager-page',
+        canActivate: [AuthGuard, ManagerGuard],
+        component: ManagerPageComponent
     },
     {
         path: '**', 
