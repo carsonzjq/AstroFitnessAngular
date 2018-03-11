@@ -1,15 +1,13 @@
-<div class="jumbotron text-center" style="background-color:#7BD5C6">
+<div class="jumbotron justify-content-center text-center" style="background-color:#7BD5C6; width:900px; margin:auto">
 
  <div class="container">
   
   
-  <table class="table table-hover table-dark">
-    <thead class="thead-light">
+  <table class="table table-hover justify">
     <tr scope="row center">
-      <th class="text-center" scope="col">Time</th>
+      <th class="text-center col-sm-3" scope="col">Time</th>
       <th class="text-center" scope="col">Post</th>
     </tr>
-  </thead>
     <tr *ngFor="let post of posts" scope="row">
       <td>{{ post.comment_date }} at {{post.comment_time}}</td>
       <td>{{ post.forum_comment }}</td>
