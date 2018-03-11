@@ -8,14 +8,6 @@ import { HttpClient } from '@angular/common/http';
 	styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-<<<<<<< HEAD
-  
-  onSubmit(NewUser){
-    console.log(NewUser);
-  }
-  ngOnInit() {
-  }
-=======
 
 	branches;
 	private url;
@@ -25,7 +17,6 @@ export class SignUpComponent implements OnInit {
 		this.fetchGyms();
 		this.passwords_are_different = false;
 	}
->>>>>>> f58303239e3bcf24cc309a9c28e5362dc96aa6d0
 
 	constructor(private http: HttpClient){
 
