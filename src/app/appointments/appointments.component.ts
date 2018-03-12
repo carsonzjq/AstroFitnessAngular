@@ -11,7 +11,7 @@ import { Appointements } from '../appointements';
 	styleUrls: ['./appointments.component.css']
 })
 export class AppointmentsComponent implements OnInit {
-
+  appts;
 	client = new Client();
 	trainers;
 	url = "http://localhost:8085/AstroFitness/rest/appointment/get/" + sessionStorage.getItem("userEmail");
