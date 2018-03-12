@@ -1,6 +1,17 @@
 <div class="jumbotron text-center" style="background-color:#7BD5C6">
-  <div><h2>You are signed up for the following appointments:</h2></div>
-  
+  <div><h2 style="color:white">Training Schedule for all clients and trainers:</h2></div>
+  <table>
+      <tr>
+        <td><h3 style="color:white">Trainer</h3></td>
+        <td><h3 style="color:white">Trainee</h3></td>
+        <td><h3 style="color:white">Time/Day</h3></td>
+      </tr>
+    <tr *ngFor="let app of appointments">
+        <td><h3 style="color:white">  {{ app.trainer_name}}  </h3></td>
+      <td><h3 style="color:white">  {{ app.client_name }}  </h3></td>
+      <td><h3 style="color:white">  {{ app.day }} at {{ app.hour }}:00  </h3></td>
+    </tr>
+  </table>
 </div>
 <div class="container" style="width:500px; background-color:#7BD5C6">
   <h2 style="color:white; text-align:center">Sign up for a training session</h2>
