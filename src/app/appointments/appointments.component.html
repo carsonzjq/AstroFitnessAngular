@@ -18,18 +18,38 @@
   <form data-toggle="validator" role="form" method="POST" (ngSubmit)="submit()" #registerForm="ngForm">
     <div class="form-group">
       <label for="branch" class="control-label" style="color:white">Trainer</label>
-      <select class="form-control" id="branch" name="branch" [(ngModel)]="client.client_gym" 
-      #branch="ngModel" (change)="checkBranch()">
-        <option *ngFor="let bran of branches" [value]="bran.id">{{bran.name}}, {{bran.address}}</option>
+      <select class="form-control" id="branch" name="branch">
+        <option *ngFor="let train of trainers" [value]="train.fname">{{train.fname}} {{train.lname}}</option>
       </select>
     </div>
     <div class="form-group">
       <label for="branch" class="control-label" style="color:white">Time</label>
       <select class="form-control" id="branch" name="branch" [(ngModel)]="client.client_gym" 
       #branch="ngModel" (change)="checkBranch()">
-        <option *ngFor="let bran of branches" [value]="bran.id">{{bran.name}}, {{bran.address}}</option>
+        <option>9:00am</option>
+        <option>10:00am</option>
+        <option>11:00am</option>
+        <option>12:00pm</option>
+        <option>1:00pm</option>
+        <option>2:00pm</option>
+        <option>3:00pm</option>
+        <option>4:00pm</option>
+        <option>5:00pm</option>
       </select>
     </div>
+    <div class="form-group">
+        <label for="branch" class="control-label" style="color:white">Day</label>
+        <select class="form-control" id="branch" name="branch" [(ngModel)]="client.client_gym" 
+        #branch="ngModel" (change)="checkBranch()">
+        <option>Sunday</option>
+        <option>Monday</option>
+        <option>Tuesday</option>
+        <option>Wednesday</option>
+        <option>Thursday</option>
+        <option>Friday</option>
+        <option>Saturday</option>
+        </select>
+      </div>
     <div class="form-group">  <!-- submit -->
       <button type="submit" class="btn btn-default" (click)="check()" [disabled]="!registerForm.form.valid">Submit</button>
     </div>

@@ -26,11 +26,10 @@ export class AppointmentsComponent implements OnInit {
 	ngOnInit() {
 		this.fetchAppointments();
 		this.fetchTrainers();
-		this.fetchClients();
 	}
 
 	fetchTrainers(){
-		this.url="http://localhost:8085/AstroFitness/rest/appointment/get/all";
+		this.url="http://localhost:8085/AstroFitness/rest/trainer/get/all";
 		this.http.get(this.url).subscribe(
 			data => {
 				this.trainers = data;
@@ -47,19 +46,4 @@ export class AppointmentsComponent implements OnInit {
 				console.log(this.appointments);
 			})
   }
-
-  	fetchClients(){
-		this.url="http://localhost:8085/AstroFitness/rest/appointment/get/all";
-		this.http.get(this.url).subscribe(
-			data => {
-				this.clients = data;
-				console.log(this.clients);
-			})
-	}
-
-	getSessions() {
-		for (let session in this.appointments) {}
-	}
-
-
 }
