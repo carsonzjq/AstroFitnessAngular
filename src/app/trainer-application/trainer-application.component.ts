@@ -51,7 +51,7 @@ export class TrainerApplicationComponent implements OnInit {
 				error => {
 					console.log(error);
 				}
-				)
+			)
 				this.router.navigate(['user-login']);
 		} else {
 			this.passwords_are_different = true;
